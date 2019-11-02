@@ -4,72 +4,209 @@
 @import "global";
 
 .header {
-    position: relative;
-    height: 100vh;
+  position: relative;
+  height: 100vh;
 }
 
 .header__slider {
-    &-item {
-        height: 100vh;
-        background-image: url(../img/header-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-    }
+  &-item {
+    height: 100vh;
+    background-image: url(../img/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 }
 
 .slider-item__info {
-    position: absolute;
-    right: 80px;
-    bottom: 116px;
-    text-align: right;
-    color: #ffffff;
-    text-transform: uppercase;
+  position: absolute;
+  right: 80px;
+  bottom: 116px;
+  text-align: right;
+  color: #ffffff;
+  text-transform: uppercase;
 
-    &-subtitle {
-        margin-bottom: 5px;
-    }
+  &-subtitle {
+    margin-bottom: 5px;
+  }
 
-    &-title {
-        font-size: 80px;
-        line-height: 86px;
-        font-weight: 800;
-        margin-bottom: 48px;
-    }
-    
-    &-subtext {
-        margin-bottom: 8px;
-    }
-    
-    &-text {
-        margin-bottom: 42px;
-        font-weight: 800;
-        font-size: 40px;
-        line-height: 46px;
-        margin-bottom: 20px;
-    }
+  &-title {
+    font-size: 80px;
+    line-height: 86px;
+    font-weight: 800;
+    margin-bottom: 48px;
+  }
+
+  &-subtext {
+    margin-bottom: 8px;
+  }
+
+  &-text {
+    margin-bottom: 42px;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 46px;
+    margin-bottom: 20px;
+  }
 }
 
 .slider-arrows {
-    position: absolute;
-    top: 40px;
-    right: 80px;
-    cursor: pointer;
-    z-index: 4;
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  cursor: pointer;
+  z-index: 4;
 
-    &__left {
-        right: 125px;
-    }
+  &__left {
+    right: 125px;
+  }
 }
 
 .slider-dots {
+  position: absolute;
+  right: 50px;
+  bottom: 36px;
+  max-width: 940px;
+  width: 100%;
+  color: ffffff;
+
+  .slick-current {
+    .dots-box {
+      border-color: $green;
+    }
+  }
+}
+
+.dots-box {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  height: 28px;
+  align-items: center;
+  border-top: 4px solid #ffffff;
+  padding-top: 6px;
+  color: #ffffff;
+
+  &__number {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 34;
+  }
+
+  &__name {
+    font-weight: 300;
+    line-height: 19;
+  }
+}
+
+.header__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 467px;
+  font-weight: 800;
+  font-size: 200px;
+  line-height: 156px;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.07;
+  z-index: 4;
+}
+
+.header__aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border-right: 1px solid rgba(#ffffff, 0.25);
+  height: 100vh;
+  text-align: center;
+  color: #ffffff;
+}
+
+.menu {
+  padding-top: 40px;
+  &__list {
+    a {
+      color: #ffffff;
+      span {
+        display: block;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 3px;
+        padding-top: 6px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.header__search {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+.header__date {
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 64px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  span {
+    display: block;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 1.4px;
+    margin-top: 17px;
+  }
+}
+
+.header__location {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.05px;
+  position: relative;
+  padding-left: 19px;
+  &::before {
+    content: "";
     position: absolute;
-    right: 80px;
-    bottom: 40px;
-    max-width: 940px;
-    width: 100%;
-    color: white;
+    width: 11px;
+    height: 13px;
+    background-image: url("../img/marker.svg");
+    left: 0;
+    top: 0;
+  }
+}
+
+.header__map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.header__arrows {
+  position: absolute;
+  left: 210px;
+  bottom: 30px;
+  z-index: 3;
+}
+
+.line-animation {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: animdash 5s infinite 6s;
+}
+
+@keyframes animdash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @import "media";

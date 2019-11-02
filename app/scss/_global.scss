@@ -1,11 +1,18 @@
 body {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
+    font-style: 16px;
 }
 
 a {
     display: inline-block;
     text-decoration: none;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .subtitle-left {
